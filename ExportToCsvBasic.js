@@ -1,8 +1,10 @@
 /*
  * link = element html 'a' dans la page
- * JSONdata = données du tableau, utilisé aussi dans le "set_mootable" par exemple
- * KEYSdata = corresponds au nom des colonnes venant de SQL (sauf la première qui est "Nom")
- * HeaderData = corresponds au nom des colonnes que l'on veut à l'affichage dans le meme ordre que les colonnes sql
+ * JSONdata = données du tableau en JSON
+ * KEYSdata = corresponds au nom des colonnes dans le JSON.
+ * HeaderData = corresponds au nom des colonnes que l'on veut à l'affichage dans le meme ordre que les colonnes sql.
+ *              Peut être généré automatiquement
+ * KEYSdata et HeaderData doivent être correspondants
  * name = nom du fichier csv (ex: blabla.csv)
  */
 function exportToCsv(link,JSONdata,KEYSdata,name,HeaderData) {
@@ -29,3 +31,14 @@ function exportToCsv(link,JSONdata,KEYSdata,name,HeaderData) {
     link.setAttribute("href", encodeURI(csvContent));
     link.setAttribute("download", name);    
 }
+
+Ex : 
+```HTML
+<script>
+    var headercsv = ["Nom","Total", "MAJ", "Nouveau"];
+    var headerdata = ["Nom", "Nombre Valide", "Mis a jour", "Nouveaux"];
+    var datacsv = '[{"Nom":"la première ligne","MAJ":"0","Nouveau":"5475","Total":"5475"},{"Nom":"le deuxieme ligne","MAJ":"60","Nouveau":"0","Total":"60"}]';
+    var name = 'tableau.csv';
+</script>
+<a onClick="exportToCsv(this,datacsv,headercsv,name,headerdata);">Télécharger le tableau</a>
+```
