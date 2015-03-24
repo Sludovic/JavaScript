@@ -27,7 +27,7 @@ function exportToCsv(link,JSONdata,KEYSdata,name,HeaderData) {
         }
         orderedData.push(liste.join(','));
     }    
-    var csvContent = "data:application/vnd.ms-excel;charset=utf-8,\r\n" + orderedData.join("\r\n");
+    var csvContent = "data:application/vnd.ms-excel,charset=utf-8,\r\n" + orderedData.join("\r\n");
+    link.setAttribute("download",name);
     link.setAttribute("href", encodeURI(csvContent));
-    link.setAttribute("download", name);    
 }
