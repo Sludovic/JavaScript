@@ -1,4 +1,5 @@
 /*
+ * Adapté de la réponse sur stackoverflow.com - http://stackoverflow.com/a/14966131
  * link = element html 'a' dans la page
  * JSONdata = données du tableau en JSON
  * KEYSdata = corresponds au nom des colonnes dans le JSON.
