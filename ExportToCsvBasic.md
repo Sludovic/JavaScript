@@ -1,3 +1,5 @@
+Adapté de la réponse sur stackoverflow.com - http://stackoverflow.com/a/14966131
+
 Exemple pour ExportToCsvBasic.js:
 ```HTML
 <script>
