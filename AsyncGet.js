@@ -19,9 +19,9 @@ var HttpClient = function() {
 
 aClient = new HttpClient();
 aClient.get(
- \'http://url/get.php?any=value\', 
+ 'http://url/get.php?any=value', 
  function(answer) {
-  var graphInscrit = document.getElementById(\'IDELEMENT\');
+  var graphInscrit = document.getElementById('IDELEMENT');
   graphInscrit.innerHTML = answer;
  },
  "TAG"
